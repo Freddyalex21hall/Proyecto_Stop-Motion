@@ -1,0 +1,115 @@
+.fuente{
+    font-size:100%;
+    color: #cc1107;
+    background: linear-gradient(to right, #ecd210, #d37502);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    text-decoration:solid;
+    text-decoration-style:solid;
+    text-decoration-color: #ff6f61;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-style: italic;
+    animation: glow 4s infinite alternate;
+}
+@keyframes glow {
+    from {
+      text-shadow: 0 0 5px #7c8011;
+    }
+    to {
+      text-shadow: 0 0 20px #ff3434;
+    }
+  }
+  h1::after {
+    content: "📽️";
+    margin-left: 10px;
+  }
+
+
+.boton{
+    width: 10%;
+}
+.icon-pequeño{
+    width: 60%;
+    font-size: xx-large;
+}
+body {
+    margin: 0;
+    height: 100vh;
+    background: black;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;               
+}
+
+.cine {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+  }
+  
+  .cortina {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to bottom, #8b0000, #a52a2a);
+    transition: transform 2s ease-in-out;
+    z-index: 2;
+  }
+  
+  .izquierda {
+    left: 0;
+    transform: translateX(0);
+    border-right: 3px solid #660000;
+  }
+  
+  .derecha {
+    right: 0;
+    transform: translateX(0);
+    border-left: 3px solid #660000;
+  }
+  
+  .pantalla {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    text-align: center;
+    font-size: 2em;
+    padding: 20px;
+  }
+
+  .btn-cine {
+    display: inline-block;
+    background-color: #660000;
+    color: #ffd700;
+    border: 3px double #ffd700;
+    padding: 15px -30px;
+    text-decoration: none;
+    font-family: 'Georgia', serif;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+  
+  .btn-cine:hover {
+    background-color: #990000;
+    color: #fff8dc;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+    transform: scale(1.05);
+  }
