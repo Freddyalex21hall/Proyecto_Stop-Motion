@@ -22,11 +22,11 @@
     to {
       text-shadow: 0 0 20px #ff3434;
     }
-  }
+}
   h1::after {
     content: "📽️";
     margin-left: 10px;
-  }
+}
 
 
 .boton{
@@ -52,9 +52,9 @@ body {
     width: 100%;
     height: 80vh;
     overflow: hidden;
-  }
+}
   
-  .cortina {
+.cortina {
     position: absolute;
     top: 0;
     width: 50%;
@@ -62,21 +62,21 @@ body {
     background: linear-gradient(to bottom, #8b0000, #a52a2a);
     transition: transform 2s ease-in-out;
     z-index: 2;
-  }
+}
   
-  .izquierda {
+.izquierda {
     left: 0;
     transform: translateX(0);
     border-right: 3px solid #660000;
-  }
+}
   
-  .derecha {
+.derecha {
     right: 0;
     transform: translateX(0);
     border-left: 3px solid #660000;
-  }
+}
   
-  .pantalla {
+.pantalla {
     position: relative;
     width: 100%;
     height: 100%;
@@ -89,9 +89,9 @@ body {
     text-align: center;
     font-size: 2em;
     padding: 20px;
-  }
+}
 
-  .btn-cine {
+.btn-cine {
     display: inline-block;
     background-color: #660000;
     color: #ffd700;
@@ -105,11 +105,11 @@ body {
     box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
     transition: all 0.3s ease;
     text-align: center;
-  }
+}
   
-  .btn-cine:hover {
+.btn-cine:hover {
     background-color: #990000;
     color: #fff8dc;
     box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
     transform: scale(1.05);
-  }
+}

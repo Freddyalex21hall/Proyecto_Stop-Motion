@@ -1,0 +1,47 @@
+body {
+    background: #1c1c1c;
+    color: #fff;
+    font-family: 'Georgia', serif;
+    background-image: url('https://www.transparenttextures.com/patterns/black-felt.png');
+  }
+
+  .cine-header {
+    background: linear-gradient(to bottom, #5e0e0e, #2c0000);
+    padding: 2rem;
+    border-bottom: 5px solid #a52a2a;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    text-align: center;
+  }
+
+  .cine-header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #000;
+    color: gold;
+  }
+
+  .btn-cine {
+    background-color: #a52a2a;
+    border: none;
+    color: #fff;
+    padding: 1rem 2rem;
+    font-size: 1.25rem;
+    margin: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .btn-cine:hover {
+    background-color: gold;
+    color: #000;
+    transform: scale(1.05);
+  }
+
+  .cine-footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #2c0000;
+    color: #aaa;
+    font-size: 0.9rem;
+  }

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Agregar Película</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="css/agregar.css" rel="stylesheet" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    crossorigin="anonymous"
+  />
+</head>
+<body>
+  <header class="bg-dark text-white text-center p-4">
+    <h1>🎬 CineManía</h1>
+    <nav class="navbar navbar-expand-lg bg-body-dark">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler bg-body-secondary"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo02"
+          aria-controls="navbarTogglerDemo02"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav me-auto mb-3 mb-lg-2">
+            <li class="nav-item">
+              <a class="nav-link text-warning btn btn-cine" href="inicio.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-warning btn btn-cine" href="catalogo.html">Películas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-warning btn btn-cine active" href="agregar.html">Agregar Película</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section>
+    <div class="container text-center mt-4">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="bg-dark p-4 rounded">
+            <form id="formularioPelicula">
+              <h2 class="text-white mb-4">Agregar Película</h2>
+              <div class="mb-3">
+                <label class="text-white fw-bold fs-5" for="nombre">Nombre de la película</label>
+                <input class="form-control" id="nombre" type="text" placeholder="Ej: El Padrino" required />
+              </div>
+              <div class="mb-3">
+                <label class="text-white fw-bold fs-5" for="director">Nombre del director (opcional)</label>
+                <input class="form-control" id="director" type="text" placeholder="Ej: Francis Ford Coppola" />
+              </div>
+              <div class="mb-3">
+                <label class="text-white fw-bold fs-5" for="date">Fecha de estreno</label>
+                <input class="form-control" id="date" type="date" required />
+              </div>
+              <div class="mb-3">
+                <label class="text-white fw-bold fs-5" for="genero">Género</label>
+                <select class="form-select" id="genero" required>
+                  <option value="">Selecciona un género</option>
+                  <option value="Acción">Acción</option>
+                  <option value="Aventura">Aventura</option>
+                  <option value="Comedia">Comedia</option>
+                  <option value="Drama">Drama</option>
+                  <option value="Terror">Terror</option>
+                  <option value="Suspenso">Suspenso</option>
+                  <option value="Ciencia ficción">Ciencia ficción</option>
+                  <option value="Animación">Animación</option>
+                  <option value="Romance">Romance</option>
+                  <option value="Documental">Documental</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="text-white fw-bold fs-5" for="imagen">Imagen (URL)</label>
+                <input class="form-control" id="imagen" type="url" placeholder="https://..." required />
+              </div>
+              <button class="btn btn-outline-warning mt-3" id="agregar" type="submit">Agregar Película</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal de alerta -->
+  <div class="modal fade" id="modalAlerta" tabindex="-1" aria-labelledby="modalAlertaLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-white border-warning">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalAlertaLabel">⚠️ Atención</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body" id="mensajeModal">
+          <!-- Se llenará dinámicamente -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-warning" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de éxito -->
+<div class="modal fade" id="modalExito" tabindex="-1" aria-labelledby="modalExitoLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-dark text-white">
+        <h5 class="modal-title" id="modalExitoLabel">¡Película Agregada!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        La película se ha agregado correctamente a tu catálogo.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+  <footer class="bg-dark text-white text-center p-3 mt-5 sticky-bottom">
+    <p>&copy; 2025 CineManía | Hecho con amor por fans del cine</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="js/agregar.js"></script>
+</body>
+</html>
