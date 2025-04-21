@@ -54,7 +54,7 @@ function mostrarCartas(peliculas) {
         carta.classList.add('col-md-4', 'col-sm-12', 'my-3');
         carta.innerHTML = `
             <div class="card" style="width: 18rem;">
-                <img src="${pelicula.imagen}" class="card-img-top" alt="Imagen de la película">
+                <img src="${pelicula.imagen}" class="card-img-top img-fluid" alt="Imagen de la película">
                 <div class="card-body">
                     <h5 class="card-title">${pelicula.nombre}</h5>
                     <p class="card-text">Director: ${pelicula.director}</p>
@@ -88,3 +88,6 @@ window.onload = function() {
     // Añade el evento del filtro de género
     document.getElementById('filtroGenero').addEventListener('change', aplicarFiltro);
 };
+
+
+// localStorage.clear();

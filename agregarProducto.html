@@ -41,11 +41,15 @@
           <div class="row justify-content-center">
             <div class="col-md-8">
               <div class="bg-dark p-4 rounded">
-                <form id="formularioPelicula">
-                  <h2 class="text-white mb-4">Agregar Película</h2>
+                <form id="formularioProducto">
+                  <h2 class="text-white mb-4">Agregar Producto</h2>
                   <div class="mb-3">
                     <label class="text-white fw-bold fs-5" for="nombreP">Nombre del producto</label>
                     <input class="form-control" id="nombreP" type="text" placeholder="Figura de Wall-E, coche de volver al futuro, etc." required />
+                  </div>
+                  <div class="mb-3">
+                    <label class="text-white fw-bold fs-5" for="precio">Precio del producto</label>
+                    <input class="form-control" id="precio" type="number" placeholder="1,2,3..." required/>
                   </div>
                   <div class="mb-3">
                     <label class="text-white fw-bold fs-5" for="cantidad">Cantidad de los productos</label>
@@ -56,18 +60,10 @@
                     <input class="form-control" id="fechaP" type="date" required />
                   </div>
                   <div class="mb-3">
-                    <label class="text-white fw-bold fs-5" for="genero">Género del producto</label>
-                    <select class="form-select" id="genero" required>
-                      <option value="">Selecciona un género</option>
-                      <option value="coleccionable">Coleccionable</option>
-                      <option value="tradeable">Tradeable</option>
-                    </select>
+                    <label class="text-white fw-bold fs-5" for="imagen">Imagen del Producto (URL)</label>
+                    <input class="form-control" id="imagenP" type="url" placeholder="https://..." required />
                   </div>
-                  <div class="mb-3">
-                    <label class="text-white fw-bold fs-5" for="imagen">Imagen (URL)</label>
-                    <input class="form-control" id="imagen" type="url" placeholder="https://..." required />
-                  </div>
-                  <button class="btn btn-outline-warning mt-3" id="agregar" type="submit">Agregar Película</button>
+                  <button class="btn btn-outline-warning mt-3" id="agregar" type="submit">Agregar Producto</button>
                 </form>
               </div>
             </div>
@@ -75,9 +71,44 @@
         </div>
       </section>
 
+       <!-- Modal de alerta -->
+  <div class="modal fade" id="modalAlerta" tabindex="-1" aria-labelledby="modalAlertaLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-white border-warning">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalAlertaLabel">⚠️ Atención</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body" id="mensajeModal">
+          <!-- Se llenará dinámicamente -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-warning" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal de éxito -->
+<div class="modal fade" id="modalExito" tabindex="-1" aria-labelledby="modalExitoLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-dark text-white">
+        <h5 class="modal-title" id="modalExitoLabel">¡Película Agregada!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        La película se ha agregado correctamente a tu catálogo.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
     <footer class="bg-dark text-white text-center p-3 mt-5 sticky-bottom">
         <p>&copy; 2025 CineManía | Hecho con amor por fans del cine</p>
     </footer>
+    <script src="js/agregarP.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 </body>
 </html>

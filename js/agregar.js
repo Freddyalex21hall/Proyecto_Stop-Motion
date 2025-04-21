@@ -13,14 +13,14 @@ function guardarPelicula(pelicula) {
         mensajeModal.innerHTML = '⚠️ Esta película ya está registrada en el catálogo.';
         modalAlerta.show();
         return;
-    }
+    };
 
     // Si no existe, guarda la nueva película
     peliculas.push(pelicula);
     localStorage.setItem('peliculas', JSON.stringify(peliculas));
     formulario.reset();  // Resetea el formulario
     modalExito.show();
-}
+};
 
 // Función que maneja el envío del formulario
 formulario.addEventListener('submit', function (e) {
@@ -37,7 +37,7 @@ formulario.addEventListener('submit', function (e) {
         mensajeModal.innerHTML = '⚠️ Todos los campos obligatorios deben ser llenados.';
         modalAlerta.show();
         return;
-    }
+    };
 
     // Crea un objeto de película con los datos ingresados
     const nuevaPelicula = {
@@ -51,3 +51,5 @@ formulario.addEventListener('submit', function (e) {
     // Guarda la película en el localStorage
     guardarPelicula(nuevaPelicula);
 });
+
+// localStorage.clear();
