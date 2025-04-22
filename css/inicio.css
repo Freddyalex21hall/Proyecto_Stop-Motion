@@ -45,3 +45,18 @@ body {
     color: #aaa;
     font-size: 0.9rem;
   }
+
+  .zoom-hover {
+    transition: transform 0.3s ease;
+  }
+  
+  .zoom-hover:hover {
+    transform: scale(1.1); /* Aumenta al 110% */
+  }
+
+  h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #000;
+    color: gold;
+  }

@@ -1,7 +1,7 @@
 const formularioProducto = document.getElementById('formularioProducto');
 const modalAlerta = document.getElementById('modalAlerta');
 const mensajeModal = document.getElementById('mensajeModal');
-
+const modalExito = document.getElementById('modalExito');
 
 function guardarProducto(producto){
     let productos = JSON.parse(localStorage.getItem('productos'))||[];
@@ -11,12 +11,14 @@ function guardarProducto(producto){
         mensajeModal.innerHTML = '⚠️ Este producto ya esta registrado ya está registrada en el catálogo.';
         modalAlerta.show();
         return;
+    }else{
+        productos.push(producto);
+        localStorage.setItem('productos',JSON.stringify(productos));
+        formularioProducto.reset();
+        modalExito.show();
     };
 
-    productos.push(producto);
-    localStorage.setItem('productos',JSON.stringify(productos));
-    formularioProducto.reset();
-    modalExito.show();
+
 };
 
 formularioProducto.addEventListener('submit', function(e){

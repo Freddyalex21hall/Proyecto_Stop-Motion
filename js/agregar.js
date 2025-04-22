@@ -2,6 +2,7 @@
 const formulario = document.getElementById('formularioPelicula');
 const modalAlerta = new bootstrap.Modal(document.getElementById('modalAlerta'));
 const mensajeModal = document.getElementById('mensajeModal');
+const modalExito = new bootstrap.Modal(document.getElementById('modalExito'));
 
 // Función que guarda la película en localStorage
 function guardarPelicula(pelicula) {

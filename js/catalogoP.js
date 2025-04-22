@@ -31,18 +31,27 @@ function mostrarProductos(){
 
         const precio = document.createElement('p');
         precio.classList.add('card-text')
-        precio.textContent = productos.precioP;
+        precio.textContent = `Precio: ${productos.precioP}`;
         divT.appendChild(precio);
 
         const cant = document.createElement('p');
         cant.classList.add('card-text')
-        cant.textContent = productos.cantidad;
+        cant.textContent = `Cantidad: ${productos.cantidad}`;
         divT.appendChild(cant);
 
         const fecha = document.createElement('p');
         fecha.classList.add('card-text');
-        fecha.textContent = productos.fechaP;
+        fecha.textContent = `Fecha de ingreso: ${productos.fechaP}`;
         divT.appendChild(fecha);
+
+        const btnVender = document.createElement('button');
+        btnVender.classList.add('btn-cine2');
+        btnVender.textContent = `Comprar`;
+        divT.appendChild(btnVender);
+
+        btnVender.addEventListener('click', ()=>{
+            localStorage.setItem('localid', productos);
+        });
 
 
         productosDiv.appendChild(cartaP);
@@ -66,13 +75,17 @@ function mostrarCartas(productos) {
         cartaP.classList.add('col-md-4', 'col-sm-12', 'my-3');
 
         const divP = document.createElement('div');
-        divP.classList.add('card','m-3');
+        divP.classList.add('card','m-3','carta','zoom-hover');
         cartaP.appendChild(divP);
+
+        const divIMG = document.createElement('div');
+        divIMG.classList.add('col-12');
+        divP.appendChild(divIMG);
         
         const imgP = document.createElement('img');
         imgP.src = productos.imagenP;
         imgP.classList.add('card-img-top','img-fluid'); 
-        divP.appendChild(imgP);
+        divIMG.appendChild(imgP);
 
         const divT = document.createElement('div');
         divT.classList.add('card-body');
