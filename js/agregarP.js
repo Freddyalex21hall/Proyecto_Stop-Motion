@@ -3,22 +3,33 @@ const modalAlerta = document.getElementById('modalAlerta');
 const mensajeModal = document.getElementById('mensajeModal');
 const modalExito = document.getElementById('modalExito');
 
+
+const modalAlertaBootstrap = new bootstrap.Modal(modalAlerta);
+const modalExitoBootstrap = new bootstrap.Modal(modalExito);
 function guardarProducto(producto){
     let productos = JSON.parse(localStorage.getItem('productos'))||[];
 
-    const productoExistente = productos.some(p=>p.nombreP.toLowerCase() === producto.nombreP.toLowerCase());
+    const productoExistente = productos.find(p=>p.nombreP.toLowerCase() === producto.nombreP.toLowerCase());
     if(productoExistente){
-        mensajeModal.innerHTML = '⚠️ Este producto ya esta registrado ya está registrada en el catálogo.';
-        modalAlerta.show();
+
+        //Sumar cantidad
+        productoExistente.cantidad += producto.cantidad;
+
+        //Guardar el arreglo actualizado
+        localStorage.setItem('productos', JSON.stringify(productos));
+
+        mensajeModal.innerHTML = '📦 Cantidad actualizada para el producto ya existente.';
+        formularioProducto.reset();
+        modalAlertaBootstrap.show();
         return;
     }else{
         productos.push(producto);
         localStorage.setItem('productos',JSON.stringify(productos));
         formularioProducto.reset();
-        modalExito.show();
+        modalExitoBootstrap.show();
     };
-
-
+    
+    
 };
 
 formularioProducto.addEventListener('submit', function(e){
@@ -33,9 +44,10 @@ formularioProducto.addEventListener('submit', function(e){
 
     if(!nombreP||isNaN(precioP)||isNaN(cantidad)||!fechaP||!imagenP){
         mensajeModal.innerHTML = '⚠️ Este producto ya esta registrado ya está registrada en el catálogo.';
-        modalAlerta.show();
+        modalAlertaBootstrap.show();
         return;
     };
+    
     const productoNuevo = {
         nombreP,
         precioP,

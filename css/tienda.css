@@ -57,13 +57,13 @@ body {
 
   .btn-cine:hover {
     background-color: gold;
-    color: #000;
+    color: #ff0000;
     transform: scale(1.05);
   }
   .btn-cine2 {
     background-color: #702121;
     border: none;
-    color: #7a7979;
+    color: #ffee51;
     padding: 1rem 2rem;
     font-size: 1.25rem;
     margin: 1rem;

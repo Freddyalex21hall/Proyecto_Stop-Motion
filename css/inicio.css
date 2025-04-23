@@ -19,23 +19,10 @@ body {
     text-shadow: 2px 2px 4px #000;
     color: gold;
   }
-
-  .btn-cine {
-    background-color: #a52a2a;
-    border: none;
-    color: #fff;
-    padding: 1rem 2rem;
-    font-size: 1.25rem;
-    margin: 1rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-    transition: all 0.3s ease-in-out;
-  }
-
-  .btn-cine:hover {
-    background-color: gold;
-    color: #000;
-    transform: scale(1.05);
+  .cine-header p {
+    font-size: 1.2rem;
+    color: rgba(255, 253, 143, 0.863);
+    font-weight: bolder;
   }
 
   .cine-footer {
@@ -51,7 +38,7 @@ body {
   }
   
   .zoom-hover:hover {
-    transform: scale(1.1); /* Aumenta al 110% */
+    transform: scale(0.9); /* Aumenta al 110% */
   }
 
   h2 {
@@ -59,4 +46,11 @@ body {
     font-weight: bold;
     text-shadow: 2px 2px 4px #000;
     color: gold;
+  }
+
+  img{
+    width: 50%;
+    aspect-ratio: 1 / 1; /* cuadrada */
+    object-fit: cover;
+    border-radius: 5px;
   }

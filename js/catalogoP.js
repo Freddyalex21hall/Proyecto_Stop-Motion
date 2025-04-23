@@ -50,7 +50,8 @@ function mostrarProductos(){
         divT.appendChild(btnVender);
 
         btnVender.addEventListener('click', ()=>{
-            localStorage.setItem('localid', productos);
+            localStorage.setItem('localid', productos.name);
+            alert('Producto añadido al carrito');
         });
 
 
