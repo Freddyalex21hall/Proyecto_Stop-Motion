@@ -60,7 +60,7 @@ function mostrarProductos(){
 };
 
 function buscarProductos() {
-    const busqueda = document.getElementById('busqueda').value.toLowerCase();  // Obtiene el texto de búsqueda
+    const busqueda = document.getElementById('busqueda1').value.toLowerCase();  // Obtiene el texto de búsqueda
     const productos = obtenerProductos();
     const resultadoBusqueda = productos.filter(producto => 
         producto.nombreP.toLowerCase().includes(busqueda)
@@ -112,6 +112,15 @@ function mostrarCartas(productos) {
         fecha.textContent = productos.fechaP;
         divT.appendChild(fecha);
 
+        const btnVender = document.createElement('button');
+        btnVender.classList.add('btn-cine2');
+        btnVender.textContent = `Comprar`;
+        divT.appendChild(btnVender);
+
+        btnVender.addEventListener('click', ()=>{
+            localStorage.setItem('productoV', productos.name);
+            alert('Producto añadido al carrito');
+        });
 
         productosDiv.appendChild(cartaP);
     });
