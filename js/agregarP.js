@@ -58,5 +58,3 @@ formularioProducto.addEventListener('submit', function(e){
     console.log(productoNuevo);
     guardarProducto(productoNuevo);
 });
-
-// localStorage.clear();

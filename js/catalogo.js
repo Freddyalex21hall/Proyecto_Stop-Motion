@@ -88,6 +88,3 @@ window.onload = function() {
     // Añade el evento del filtro de género
     document.getElementById('filtroGenero').addEventListener('change', aplicarFiltro);
 };
-
-
-// localStorage.clear();

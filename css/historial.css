@@ -1,0 +1,49 @@
+body {
+    background-color: #121212;
+    color: #FFD700;
+    font-family: 'Georgia', serif;
+}
+
+.navbar, .footer {
+    background-color: #1c1c1c;
+}
+
+h1, h2, h5 {
+    font-weight: bold;
+    color: #FFD700;
+}
+
+.btn-cine {
+    background-color: #FFD700;
+    color: #1c1c1c;
+    font-weight: bold;
+    border: none;
+}
+
+.card {
+    background-color: #222;
+    border: 2px solid #FFD700;
+    color: #fdf6d8;
+}
+
+.card h5 {
+    color: #FFD700;
+}
+
+.card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.card li::before {
+    content: "🎬 ";
+}
+
+.footer p {
+    margin: 0;
+    color: #aaa;
+}
+
+.volver-btn {
+    margin: 1rem 0;
+}

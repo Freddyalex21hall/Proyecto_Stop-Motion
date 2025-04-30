@@ -52,5 +52,3 @@ formulario.addEventListener('submit', function (e) {
     // Guarda la película en el localStorage
     guardarPelicula(nuevaPelicula);
 });
-
-// localStorage.clear();
