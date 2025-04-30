@@ -1,18 +1,6 @@
 const modalAlerta = document.getElementById('modalAlerta');
 const mensajeModal = document.getElementById('mensajeModal');
 const modalAlertaBootstrap = new bootstrap.Modal(modalAlerta);
-function obtenerProductos() {
-    return JSON.parse(localStorage.getItem('productos')) || [];
-};
-
-
-function obtenerCarrito() {
-    return JSON.parse(localStorage.getItem('carrito')) || [];
-}
-
-function guardarCarrito(carrito) {
-    localStorage.setItem('carrito', JSON.stringify(carrito));
-}
 
 function agregarAlCarrito(producto) {
     const carrito = obtenerCarrito();
@@ -37,6 +25,21 @@ function agregarAlCarrito(producto) {
     mensajeModal.innerHTML = '📦 Producto añadido al carrito';
     modalAlertaBootstrap.show();
 }
+
+function obtenerProductos() {
+    return JSON.parse(localStorage.getItem('productos')) || [];
+};
+
+
+function obtenerCarrito() {
+    return JSON.parse(localStorage.getItem('carrito')) || [];
+}
+
+function guardarCarrito(carrito) {
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+}
+
+
 function mostrarProductos(){
     const productos = obtenerProductos();
     const productosDiv = document.getElementById('catalogoP');
