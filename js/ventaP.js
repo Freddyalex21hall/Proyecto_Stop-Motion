@@ -1,4 +1,5 @@
 const modalAlerta = document.getElementById('modalAlerta');
+const mensajeModal = document.getElementById('mensajeModal');
 const modalAlertaBootstrap = new bootstrap.Modal(modalAlerta);
 function obtenerCarrito() {
     return JSON.parse(localStorage.getItem('carrito')) || [];
