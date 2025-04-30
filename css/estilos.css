@@ -1,5 +1,5 @@
 .fuente{
-    font-size:100%;
+    font-size:90%;
     color: #cc1107;
     background: linear-gradient(to right, #ecd210, #d37502);
     -webkit-background-clip: text;
@@ -9,7 +9,7 @@
     text-decoration-style:solid;
     text-decoration-color: #ff6f61;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     font-family: 'Playfair Display', serif;
     font-weight: 700;
     font-style: italic;
@@ -17,17 +17,24 @@
 }
 @keyframes glow {
     from {
-      text-shadow: 0 0 5px #7c8011;
+        text-shadow: 0 0 5px #7c8011;
     }
     to {
-      text-shadow: 0 0 20px #ff3434;
+        text-shadow: 0 0 20px #ff3434;
     }
 }
-  h1::after {
+h1::after {
     content: "📽️";
     margin-left: 10px;
 }
 
+@media (max-width: 480px) {
+    .fuente {
+        font-size: 10px; /* Tamaño aún más pequeño */
+        padding: 12px;
+        letter-spacing: normal;
+    }
+}
 
 .boton{
     width: 10%;
@@ -112,10 +119,4 @@ body {
     color: #fff8dc;
     box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
     transform: scale(1.05);
-}
-
-@media (max-width: 480px) {
-    .fuente {
-        font-size: 10px; /* Tamaño aún más pequeño */
-    }
 }
