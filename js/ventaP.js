@@ -1,3 +1,5 @@
+const modalAlerta = document.getElementById('modalAlerta');
+const modalAlertaBootstrap = new bootstrap.Modal(modalAlerta);
 function obtenerCarrito() {
     return JSON.parse(localStorage.getItem('carrito')) || [];
 }
@@ -71,7 +73,9 @@ function mostrarCarrito() {
                 guardarCarrito(carrito);
                 mostrarCarrito();
             } else {
-                alert('No puedes seleccionar más de la cantidad disponible');
+                mensajeModal.innerHTML = '📦 No puedes seleccionar más de la cantidad disponible';
+                modalAlertaBootstrap.show();
+                return;
             }
         });
         botonesDiv.appendChild(btnMas);
@@ -114,7 +118,8 @@ function guardarHistorialVenta(venta) {
 function venderCarrito() {
     const carrito = obtenerCarrito();
     if (carrito.length === 0) {
-        alert('No hay productos en el carrito para vender.');
+        mensajeModal.innerHTML = '📦 No hay productos en el carrito para vender.';
+        modalAlertaBootstrap.show();
         return;
     }
 
@@ -151,7 +156,8 @@ carrito.forEach(itemCarrito => {
 
 localStorage.setItem('productos', JSON.stringify(productos));
     // Vaciar carrito y mostrar mensaje
-    alert('¡Venta realizada con éxito!');
+    mensajeModal.innerHTML = '📦 ¡Venta realizada con éxito!';
+    modalAlertaBootstrap.show();
     localStorage.removeItem('carrito');
     mostrarCarrito();
     calcularTotales();

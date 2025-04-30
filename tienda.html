@@ -53,7 +53,23 @@
 
 
 
-
+    <!-- Modal de alerta -->
+    <div class="modal fade" id="modalAlerta" tabindex="-1" aria-labelledby="modalAlertaLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark text-white border-warning">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalAlertaLabel">⚠️ Atención</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body" id="mensajeModal">
+            <!-- Se llenará dinámicamente -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-warning" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <footer class="bg-dark text-white text-center p-3 mt-5 sticky-sm-bottom sticky-md-bottom sticky-lg-bottom sticky-xl-bottom">
         <p>&copy; 2025 CineManía | Hecho con amor por fans del cine</p>
     </footer>

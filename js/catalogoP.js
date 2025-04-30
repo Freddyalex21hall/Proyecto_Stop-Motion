@@ -1,3 +1,5 @@
+const modalAlerta = document.getElementById('modalAlerta');
+const modalAlertaBootstrap = new bootstrap.Modal(modalAlerta);
 function obtenerProductos() {
     return JSON.parse(localStorage.getItem('productos')) || [];
 };
@@ -19,7 +21,9 @@ function agregarAlCarrito(producto) {
         if (existe.cantidadSeleccionada < producto.cantidad) {
             existe.cantidadSeleccionada += 1;
         } else {
-            alert('No puedes agregar más de la cantidad disponible');
+            mensajeModal.innerHTML = '📦 No puedes agregar más de la cantidad disponible';
+            modalAlertaBootstrap.show();
+            return;
         }
     } else {
         carrito.push({
@@ -29,7 +33,8 @@ function agregarAlCarrito(producto) {
     }
 
     guardarCarrito(carrito);
-    alert('Producto añadido al carrito');
+    mensajeModal.innerHTML = '📦 Producto añadido al carrito';
+    modalAlertaBootstrap.show();
 }
 function mostrarProductos(){
     const productos = obtenerProductos();
