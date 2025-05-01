@@ -60,3 +60,10 @@ body {
     color: #000;
     transform: scale(1.05);
   }
+
+  .card-img-top {
+    height: 500px !important; /* Altura uniforme */
+    width: 800px !important;   /* Que use todo el ancho */
+    object-fit: cover !important; /* Para que no se deforme */
+    display: block;
+  }
