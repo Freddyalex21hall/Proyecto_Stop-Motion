@@ -31,7 +31,7 @@ function mostrarHistorial() {
 
         container.appendChild(div);
     });
-}
+};
 
 window.onload = function () {
     mostrarHistorial();

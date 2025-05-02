@@ -12,10 +12,8 @@ function guardarProducto(producto){
     const productoExistente = productos.find(p=>p.nombreP.toLowerCase() === producto.nombreP.toLowerCase());
     if(productoExistente){
 
-        //Sumar cantidad
         productoExistente.cantidad += producto.cantidad;
 
-        //Guardar el arreglo actualizado
         localStorage.setItem('productos', JSON.stringify(productos));
 
         mensajeModal.innerHTML = '📦 Cantidad actualizada para el producto ya existente.';

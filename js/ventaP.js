@@ -3,11 +3,11 @@ const mensajeModal = document.getElementById('mensajeModal');
 const modalAlertaBootstrap = new bootstrap.Modal(modalAlerta);
 function obtenerCarrito() {
     return JSON.parse(localStorage.getItem('carrito')) || [];
-}
+};
 
 function guardarCarrito(carrito) {
     localStorage.setItem('carrito', JSON.stringify(carrito));
-}
+};
 
 function calcularTotales() {
     const carrito = obtenerCarrito();
@@ -23,7 +23,7 @@ function calcularTotales() {
     document.getElementById('subtotal').textContent = `$ ${subtotal.toFixed(0)}`;
     document.getElementById('iva').textContent = `$ ${iva.toFixed(0)}`;
     document.getElementById('total').textContent = `$ ${total.toFixed(0)}`;
-}
+};
 
 function mostrarCarrito() {
     const carrito = obtenerCarrito();
@@ -77,7 +77,7 @@ function mostrarCarrito() {
                 mensajeModal.innerHTML = '📦 No puedes seleccionar más de la cantidad disponible';
                 modalAlertaBootstrap.show();
                 return;
-            }
+            };
         });
         botonesDiv.appendChild(btnMas);
 
@@ -89,7 +89,7 @@ function mostrarCarrito() {
                 producto.cantidadSeleccionada--;
                 guardarCarrito(carrito);
                 mostrarCarrito();
-            }
+            };
         });
         botonesDiv.appendChild(btnMenos);
 
@@ -97,7 +97,7 @@ function mostrarCarrito() {
         btnEliminar.classList.add('btn', 'btn-warning');
         btnEliminar.textContent = 'Eliminar';
         btnEliminar.addEventListener('click', () => {
-            carrito.splice(index, 1);  // Eliminar el producto del array
+            carrito.splice(index, 1);
             guardarCarrito(carrito);
             mostrarCarrito();
         });
@@ -108,13 +108,13 @@ function mostrarCarrito() {
     });
 
     calcularTotales();
-}
+};
 
 function guardarHistorialVenta(venta) {
     const historial = JSON.parse(localStorage.getItem('historialVentas')) || [];
     historial.push(venta);
     localStorage.setItem('historialVentas', JSON.stringify(historial));
-}
+};
 
 function venderCarrito() {
     const carrito = obtenerCarrito();
@@ -122,9 +122,8 @@ function venderCarrito() {
         mensajeModal.innerHTML = '📦 No hay productos en el carrito para vender.';
         modalAlertaBootstrap.show();
         return;
-    }
+    };
 
-    // Calcular totales
     let subtotal = 0;
     carrito.forEach(producto => {
         subtotal += producto.precioP * producto.cantidadSeleccionada;
@@ -132,7 +131,6 @@ function venderCarrito() {
     const iva = subtotal * 0.19;
     const total = subtotal + iva;
 
-    // Guardar en historial
     const venta = {
         fecha: new Date().toLocaleString(),
         productos: carrito,
@@ -142,7 +140,6 @@ function venderCarrito() {
     };
     guardarHistorialVenta(venta);
 
-    // ↓↓↓ ACTUALIZACIÓN DEL STOCK EN TIENDA ↓↓↓
 let productos = JSON.parse(localStorage.getItem('productos')) || [];
 
 carrito.forEach(itemCarrito => {
@@ -150,24 +147,22 @@ carrito.forEach(itemCarrito => {
     if (index !== -1) {
         productos[index].cantidad -= itemCarrito.cantidadSeleccionada;
         if (productos[index].cantidad <= 0) {
-            productos.splice(index, 1); // Eliminar producto si se agota
-        }
-    }
+            productos.splice(index, 1); 
+        };
+    };
 });
 
 localStorage.setItem('productos', JSON.stringify(productos));
-    // Vaciar carrito y mostrar mensaje
     mensajeModal.innerHTML = '📦 ¡Venta realizada con éxito!';
     modalAlertaBootstrap.show();
     localStorage.removeItem('carrito');
     mostrarCarrito();
     calcularTotales();
 
-    // Opcional: refrescar productos si estás en la tienda
     if (typeof mostrarProductos === 'function') {
         mostrarProductos();
-    }
-}
+    };
+};
 
 window.onload = function () {
     mostrarCarrito();
@@ -175,5 +170,5 @@ window.onload = function () {
     const btnVender = document.getElementById('venta');
     if (btnVender) {
         btnVender.addEventListener('click', venderCarrito);
-    }
+    };
 };
